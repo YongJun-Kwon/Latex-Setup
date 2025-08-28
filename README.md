@@ -33,21 +33,30 @@ latex-setup/
 
 ---
 
-## 📦 필수 프로그램 설치 (처음 PC 세팅 시)
+## 📦 Prerequisites (처음 PC 세팅 시 설치해야 할 프로그램)
+
+새로운 PC에서 `install.ps1`을 실행하기 전에 아래 프로그램들을 반드시 설치해야 합니다.
 
 1. **Visual Studio Code**  
-   https://code.visualstudio.com/
+   https://code.visualstudio.com/  
+   → LaTeX 작성 및 워크플로우 실행용
 
-2. **MiKTeX** (Windows)  
+2. **MiKTeX**  
    https://miktex.org/download  
-   설치 후 MiKTeX Console → Packages → `latexmk` 검색하여 설치
+   → LaTeX 배포판 (Windows)  
+   설치 후 MiKTeX Console → *Packages* → `latexmk` 검색하여 설치
 
-3. **Inkscape**  
+3. **Perl (Strawberry Perl 권장)**  
+   https://strawberryperl.com/  
+   → `latexmk`는 Perl로 작성되어 있으므로 Perl 실행 환경이 필요합니다.
+
+4. **Inkscape**  
    https://inkscape.org/release/  
+   → 그림 제작 및 `.svg → .pdf_tex` 변환
 
-4. **Git** (선택)  
+5. **Git** (선택)  
    https://git-scm.com/download/win  
-   GitHub에서 이 저장소를 clone할 때 필요합니다.
+   → GitHub에서 저장소를 clone할 때 필요. ZIP 다운로드로 대체 가능
 
 ---
 
