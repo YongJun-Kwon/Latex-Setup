@@ -33,6 +33,24 @@ latex-setup/
 
 ---
 
+## 📦 필수 프로그램 설치 (처음 PC 세팅 시)
+
+1. **Visual Studio Code**  
+   https://code.visualstudio.com/
+
+2. **MiKTeX** (Windows)  
+   https://miktex.org/download  
+   설치 후 MiKTeX Console → Packages → `latexmk` 검색하여 설치
+
+3. **Inkscape**  
+   https://inkscape.org/release/  
+
+4. **Git** (선택)  
+   https://git-scm.com/download/win  
+   GitHub에서 이 저장소를 clone할 때 필요합니다.
+
+---
+
 ## 🚀 설치 방법 (새 PC)
 1. 저장소 클론:
    ```bash
