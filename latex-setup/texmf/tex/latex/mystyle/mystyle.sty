@@ -1,0 +1,103 @@
+% ==== 레이아웃 공통 모듈 (pdflatex + kotex 전제) ====
+
+% layout style
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{xcolor}   % inkscape의 pdf_tex가 색 정의에 사용
+\usepackage{import}   % \import{dir/}{file} 사용
+\usepackage{float}
+\usepackage{caption}
+
+% UTF-8 + 한글
+\usepackage[utf8]{inputenc}  % (현 LaTeX은 기본이지만 명시해도 OK)
+\usepackage{kotex}
+
+% 하이퍼링크/북마크 — 한 번만, 거의 맨 뒤에
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage{bookmark}        % hyperref 뒤
+
+% ---- 각주 스타일 및 기호 체계 ----
+\usepackage[hang,flushmargin]{footmisc} % 들여쓰기 없이 매단 각주
+\setlength{\footnotesep}{10pt}          % 각주 줄 간격
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} % 숫자 대신 *, †, ‡, §, ¶, ‖
+
+% 여백/머리말/꼬리말 패키지
+\usepackage[a4paper,margin=25mm,headsep=8mm,footskip=12mm]{geometry}
+\usepackage{fancyhdr}
+
+% 머리말 높이 (경고 방지)
+\setlength{\headheight}{15pt}
+
+% ----- 사용자 설정 매크로 (기본값) -----
+% 필요한 곳에서 \renewcommand 로 바꿔 쓰세요.
+\newcommand{\LeftHeader}{\textit{Les 6}}                 % 머리말 좌측
+\newcommand{\RightHeader}{\raisebox{0.5ex}{\tiny$\square$}} % 머리말 우측
+\newcommand{\LeftFooter}{\textsc{Chapter 4.\ Cauchy Theorem}} % 꼬리말 좌측
+\newcommand{\CenterFooter}{\thepage}                     % 꼬리말 중앙(페이지)
+
+% ----- 스타일 적용 -----
+\pagestyle{fancy}
+\fancyhf{} % 초기화
+
+% 머리말
+\fancyhead[L]{\LeftHeader}
+\fancyhead[R]{\RightHeader}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% 꼬리말
+\fancyfoot[L]{\LeftFooter}
+\fancyfoot[C]{\CenterFooter}
+\renewcommand{\footrulewidth}{0pt}
+
+% ====== 편의 매크로 ======
+% 문서 전체에서 쉽게 교체하려면 아래처럼 한 번에 변경하세요.
+% \setheaders{왼쪽머리말}{오른쪽머리말}
+% \setfooters{왼쪽꼬리말}{가운데꼬리말}
+\newcommand{\setheaders}[2]{%
+  \renewcommand{\LeftHeader}{#1}%
+  \renewcommand{\RightHeader}{#2}%
+  \fancyhead[L]{\LeftHeader}%
+  \fancyhead[R]{\RightHeader}%
+}
+\newcommand{\setfooters}[2]{%
+  \renewcommand{\LeftFooter}{#1}%
+  \renewcommand{\CenterFooter}{#2}%
+  \fancyfoot[L]{\LeftFooter}%
+  \fancyfoot[C]{\CenterFooter}%
+}
+
+% 체크박스/아이콘 등을 자주 바꾸고 싶다면 이렇게도:
+% \newcommand{\Checkbox}{\raisebox{0.5ex}{\tiny$\square$}}
+% \renewcommand{\RightHeader}{\Checkbox}
+
+% theoremstyle
+\typeout{[layout.tex v2025-08-28 loaded]}
+
+% 1) amsthm로 theorem-like 환경 정의(섹션 단위 번호)
+\usepackage{amsthm}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+
+% 2) tcolorbox로 외형(박스)만 적용
+\usepackage[most]{tcolorbox}
+\tcbset{
+  theostyle/.style={
+    enhanced, breakable,
+    sharp corners,
+    boxrule=0.6pt, colback=white, colframe=black,
+    attach boxed title to top left={yshift=-2mm, xshift=2mm},
+    boxed title style={colback=white, boxrule=0pt, left=2mm, right=2mm},
+    fonttitle=\bfseries
+  }
+}
+\tcolorboxenvironment{theorem}{theostyle}
+\tcolorboxenvironment{definition}{theostyle}
+\tcolorboxenvironment{lemma}{theostyle}
+\tcolorboxenvironment{remark}{theostyle}
