@@ -1,0 +1,156 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{mystyle}
+
+\title{QM study}
+\author{yongjun Kwon}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\vspace{-2em} % 간격을 줄이기 (음수 값: 줄임)
+
+\setcounter{section}{1}
+
+\section*{11.4 Parity Invariance}
+\setheaders{\textit{QUANTUM MECHANICS}}{\raisebox{0.5ex}{\tiny$\square$}}
+\setfooters{\textsc{Chapter 11.4 Parity Invariance}}{\thepage}
+
+Parity is a discrete transformation. It corresponds to reflecting to the origin.
+\begin{align*}
+  x  \underset{\text{parity}}{\longrightarrow} -x \\
+  p \underset{\text{parity}}{\longrightarrow} -p
+\end{align*}
+
+In quantum theory, parity operator acts like,
+\[
+\Pi | x \rangle = | -x \rangle
+\]
+you can easily check how it's done on arbitrary state \(\langle \psi | \)
+\begin{align*}
+  \Pi | \psi \rangle  &=\Pi \int_{\infty}^{-\infty } | x \rangle\langle x | \,dx  \\
+    &= \int_{\infty}^{-\infty} | -x \rangle\langle x |  \,dx \\
+    &= \int_{\infty}^{-\infty} | x' \rangle\langle -x' | \psi \,dx'  
+\end{align*}
+
+So the result is
+\[
+| x \rangle\langle \psi | = \psi (x) 
+\]
+\[
+\langle x | \Pi | \psi \rangle =\psi(-x)
+\]
+
+If you use the realation of \(\langle x | p \rangle  = \frac{1}{\sqrt{2 \pi \hbar}} e^{\frac{ipx}{\hbar}} \), you can easily see that
+
+\[
+\Pi | p \rangle =| -p \rangle \qquad (\text{with out phase factor})
+\]
+
+\begin{proposition}[Parity operator $\Pi$] \hfill \\
+  1. $\Pi = \Pi^{-1}$. \\
+  2. The eigenvalues are $\pm 1 \qquad (\Pi^2= I)$.\\
+  3. So $\Pi$ is Hermitian and unitary.\\
+  4. So $\Pi^{-1}=\Pi^\dagger=\Pi$.
+\end{proposition}
+
+Eigenvalues can determine that eigenvectors are even/odd. In x, p basis form, you can think about its wave function is parity even/odd also.
+But if you know that particular vector is even/odd, it does not mean that it have a even/odd wave function in arbitrary basis form.
+Means \(\psi(\omega) \underset{\text{parity}}{\longrightarrow} \psi(-\omega)\) doesn't always true.
+
+We may define operators as Heigenberg way.
+\begin{align*}
+  \Pi^\dagger X \Pi = -X \\
+  \Pi^\dagger P \Pi = -P \\
+\end{align*}
+
+Then Hamiltonian Parity invariant if
+\[
+\Pi^\dagger H(X,P) \Pi = H(-X,-P) = H(X,P)
+\]
+If you simply multiply both sides you can get
+\[
+[\Pi,H]=0 
+\]
+In particular if we consider only one dimension, we can show that eigenfunctions of harmonic oscillator and infinte potential well problem are also eigenfunction of
+Parity operator.
+\begin{remark}[infinte box potential]
+  Two cases for it. \(-L/2 ~ L/2\) case have potential symmetric under parity but \(0~L\) don't. So \(0~L\) case
+  have no definite parity.
+\end{remark}
+
+Because Hamiltonian and U(t) commutes, if parity operator commutes with Hamiltonian, it also commutes with U(t).
+\[
+\Pi U(t)=U(t)\Pi
+\]
+It means that the operation of applying parity followed by time evolution for
+t is equivalent to applying time evolution for
+t followed by parity. \\
+\indent One famous example of Parity non-Invariance is weak force. The famous experiment is well described on textbook pg.299-300.
+\newpage
+
+\section*{11.5 Time-Reversal Symmetry}
+\setheaders{\textit{QUANTUM MECHANICS}}{\raisebox{0.5ex}{\tiny$\square$}}
+\setfooters{\textsc{Chapter 11.5 Parity Invariance}}{\thepage}
+
+Time reversed state can be thought as one in which the position is same but the momentum is reversed.
+Think the earth moves counter-clockwise from \(\theta=0\) at \(t=0\). When \(t=T\), superman reversed its motion as
+clockwise, then we can see after the same amount of time flies that:
+\[
+x(2T)=x(0) \qquad p(2T)=-p(0)
+\]
+(I didn't care about vector here for simplification). The above defines the TRI(Time-Reversal Invariance.). \\
+\indent Let's check out how time reversal comes out from Newton's law.
+If we consider t=0 defines the point when the motion is time-reversed,
+\[
+x_r (t)=x(-t)
+\]
+The reversal of velocities follow from this:
+\[
+\dot{x_r}(t)=\frac{\mathrm{d} x(-t)}{\mathrm{d} t}=-\frac{\mathrm{d} x(-t)}{\mathrm{d} (-t)}=-\dot{x}(-t)
+\]
+You can see time reversed trajectory also obeys newton's second law:
+\[
+\frac{d^2 x_r(t)}{d t^2}=m \frac{d^2 x(-t)}{d t^2}=m \frac{d^2 x(-t)}{d(-t)^2}=F(x(-t))=F\left(x_r(t)\right)
+\]
+So the reversed motion follows the newton's second law like as x(t) does.\\
+\indent What is the example of non time-reversal invariant? We can think of a charged particle that moves through
+the +z magnetic area. Since velocity is related with Lorentz force, it does not come back to original position
+if you reverse its velocity at \(t=T\). 
+
+\indent How does it appear at quantum mechanics? The answer is complex conjugate:
+\[
+\psi \rightarrow \psi^*
+\]
+Consider time independent shrodinger equation on x-basis. 
+\[
+i \hbar \frac{\partial \psi(x, t)}{\partial t}=H(x) \psi(x, t)
+\]
+Complex conjugate did not influence on probability distribution by x. But in plane wave, complex conjugate give us 
+reversed momentum.\footnotemark
+\footnotetext{I'm concerning about it is okay to think that applying complex conjugate on $-i\hbar \frac{\partial}{\partial x}$
+is Heigenberg picture. What do you think?}
+\\
+\indent If the system has TRI, We can think about following steps:
+\[
+\psi(x, 0) \rightarrow e^{-i H(x) T / \hbar} \psi(x, 0) \rightarrow e^{i H^*(x) T / \hbar} \psi^*(x, 0) \rightarrow e^{-i H(x) T / \hbar} e^{i H^*(x) T / \hbar} \psi^*(x, 0)
+\]
+In order to acheive TRI, we require that
+\[
+H(x)=H^*(x)
+\]
+then
+\[
+\psi(x, 2T)=\psi^*(x,0)
+\]
+ie, Hamiltonian be real. \(H=\frac{P^2}{2m}+V(x)\) meets this criteria even in higher dimension. But, if we have a 
+magnetic field, P enters linearly and \(H(x)=H^*(x)\) breaks. Also note that if Hamiltonian is real, every eigenfunction 
+implies a degenerate one, which is its conjugate.
+\begin{remark}[magnetic field]
+  Failure of TRI due to the magnetic field does not imply that E.M is fundamentally breaks the time-reversal symmetry.
+  If you incoporate the currnets that make magnetic field to your whole system, E.M meets the time-reversal symmetry.
+\end{remark}
+
+
+
+\end{document}
