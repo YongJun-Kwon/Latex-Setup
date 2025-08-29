@@ -15,12 +15,12 @@ VS Code + LaTeX + Inkscape 환경에서
 ---
 
 ## 📂 구조(window)
-latex-setup_window/
-├─ install.ps1                     # 최초 설치 스크립트
-├─ backup.ps1                      # 전체 환경 백업 스크립트
-├─ extensions.txt                  # 필수 VS Code 확장 목록
-├─ README.md                       # (여기 readme 읽으면 필요 없음)
-├─ vscode/
+latex-setup_window/ \\
+├─ install.ps1                     # 최초 설치 스크립트\\
+├─ backup.ps1                      # 전체 환경 백업 스크립트\\
+├─ extensions.txt                  # 필수 VS Code 확장 목록\\
+├─ README.md                       # (여기 readme 읽으면 필요 없음)\\
+├─ vscode/ \\
 │ ├─ settings.json                 # 기본 설정
 │ ├─ keybindings.json              # Ctrl+Shift+I 단축키
 │ ├─ tasks.json                    # figure:oneshot 태스크
