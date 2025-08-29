@@ -32,19 +32,21 @@ latex-setup_window/ \\
       └─ mystyle.sty               # 전역 개인 스타일 패키지
 
 ## 📂 구조(mac)
+```
 latex-setup_mac/
-├─ install_mac.sh                  # 맥 전용 설치 스크립트
-├─ README_mac.md                   # 맥 전용 사용 안내
-├─ vscode/
-│  ├─ settings.json
-│  ├─ keybindings.json             # Cmd+Shift+I → figure:oneshot
-│  ├─ tasks.json                   # 사용자 태스크 (figure:oneshot)
-│  └─ snippets/latex.json          # figi 스니펫 (\figinclude)
-├─ tex-tools/
-│  └─ figure_workflow.sh           # Inkscape → Export → 클립보드
-└─ texmf/
-   └─ tex/latex/mystyle/
-      └─ mystyle.sty               # 개인 패키지 (정리/매크로/figinclude)
+├── install_mac.sh      # 맥 전용 설치 스크립트
+├── README_mac.md       # 맥 전용 사용 안내
+├── vscode/
+│   ├── settings.json
+│   ├── keybindings.json   # Cmd+Shift+I → figure:oneshot
+│   ├── tasks.json         # 사용자 태스크 (figure:oneshot)
+│   └── snippets/latex.json # figi 스니펫 (\figinclude)
+├── tex-tools/
+│   └── figure_workflow.sh # Inkscape → Export → 클립보드
+├── texmf/
+│   └── tex/latex/mystyle/
+│       └── mystyle.sty    # 개인 패키지 (정리/매크로/figinclude)
+```
 
 ---
 
