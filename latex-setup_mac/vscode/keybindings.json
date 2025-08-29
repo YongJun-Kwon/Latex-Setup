@@ -1,0 +1,8 @@
+[
+  {
+    "key": "cmd+shift+i",
+    "command": "workbench.action.tasks.runTask",
+    "args": "figure:oneshot",
+    "when": "editorTextFocus && editorLangId == 'latex'"
+  }
+]
