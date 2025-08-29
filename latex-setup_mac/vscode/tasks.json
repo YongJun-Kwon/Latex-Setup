@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "figure:oneshot",
+      "type": "shell",
+      "command": "${env:HOME}/tex-tools/figure_workflow.sh",
+      "args": [
+        "${input:figName}"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "figName",
+      "type": "promptString",
+      "description": "Figure name (no spaces)",
+      "default": "newfig"
+    }
+  ]
+}

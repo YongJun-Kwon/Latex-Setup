@@ -1,0 +1,361 @@
+{
+  // ===== 수식/환경 =====
+  "Inline Math": {
+    "prefix": "mk",
+    "body": ["\\($TM_SELECTED_TEXT$1\\)"],
+    "description": "Inline math: \\(...\\)"
+  },
+  "Display Math": {
+    "prefix": "dm",
+    "body": ["\\[", "$TM_SELECTED_TEXT$1", "\\]"],
+    "description": "Display math: \\[...\\]"
+  },
+  "Equation": {
+    "prefix": "eq",
+    "body": [
+      "\\begin{equation}",
+      "  $TM_SELECTED_TEXT$1",
+      "\\end{equation}"
+    ],
+    "description": "equation 환경"
+  },
+  "Align": {
+    "prefix": "al",
+    "body": [
+      "\\begin{align*}",
+      "  $1 \\\\",
+      "  $2",
+      "\\end{align*}"
+    ],
+    "description": "align 환경"
+  },
+  "Cases": {
+    "prefix": "cases",
+    "body": [
+      "\\begin{cases}",
+      "  $1, &\\text{$2}$ \\\\",
+      "  $3, &\\text{$4}$",
+      "\\end{cases}"
+    ],
+    "description": "cases 환경"
+  },
+
+  // ===== 자주 쓰는 수식 토막 =====
+  "Fraction": {
+    "prefix": "frac",
+    "body": ["\\frac{$1}{$2}"],
+    "description": "\\frac{}{}"
+  },
+  "Partial Derivative": {
+    "prefix": "pder",
+    "body": ["\\frac{\\partial $1}{\\partial $2}"],
+    "description": "∂/∂"
+  },
+  "Total Derivative": {
+    "prefix": "tder",
+    "body": ["\\frac{\\mathrm{d} $1}{\\mathrm{d} $2}"],
+    "description": "d/d"
+  },
+  "Vector Bold": {
+    "prefix": "vb",
+    "body": ["\\mathbf{$1}"],
+    "description": "\\mathbf{}"
+  },
+  "Bold Symbol": {
+    "prefix": "bb",
+    "body": ["\\boldsymbol{$1}"],
+    "description": "\\boldsymbol{}"
+  },
+  "Hat / Tilde / Bar": {
+    "prefix": "hat",
+    "body": ["\\hat{$1}"],
+    "description": "\\hat{}"
+  },
+  "tilde": {
+    "prefix": "til",
+    "body": ["\\tilde{$1}"],
+    "description": "\\tilde{}"
+  },
+  "bar": {
+    "prefix": "bar",
+    "body": ["\\overline{$1}"],
+    "description": "\\overline{}"
+  },
+
+  // ===== 브라–켓 (양자역학) =====
+  "bra": {
+    "prefix": "bra",
+    "body": ["\\langle $1 |"],
+    "description": "bra: ⟨ψ|"
+  },
+  "ket": {
+    "prefix": "ket",
+    "body": ["| $1 \\rangle"],
+    "description": "ket: |ψ⟩"
+  },
+  "braket": {
+    "prefix": "brk",
+    "body": ["\\langle $1 | $2 \\rangle"],
+    "description": "⟨ψ|φ⟩"
+  },
+  "outer": {
+    "prefix": "out",
+    "body": ["| $1 \\rangle\\langle $2 |"],
+    "description": "Outer product"
+  },
+
+  // ===== 행렬/벡터 =====
+  "pmatrix": {
+    "prefix": "pmat",
+    "body": [
+      "\\begin{pmatrix}",
+      "  $1 & $2 \\\\",
+      "  $3 & $4",
+      "\\end{pmatrix}"
+    ],
+    "description": "pmatrix 2x2"
+  },
+  "bmatrix": {
+    "prefix": "bmat",
+    "body": [
+      "\\begin{bmatrix}",
+      "  $1 & $2 \\\\",
+      "  $3 & $4",
+      "\\end{bmatrix}"
+    ],
+    "description": "bmatrix 2x2"
+  },
+
+// === 박스 스타일 정리/증명 ===
+ "Theorem (tcolorbox style)": {
+    "prefix": "thm",
+    "body": [
+      "\\begin{theorem}[$1]",
+      "  $2",
+      "\\end{theorem}"
+    ],
+    "description": "박스형 Theorem 환경 골격"
+  },
+  "Definition (tcolorbox style)": {
+    "prefix": "def",
+    "body": [
+      "\\begin{definition}[$1]",
+      "  $2",
+      "\\end{definition}"
+    ],
+    "description": "박스형 Definition 환경 골격"
+  },
+  "Lemma (tcolorbox style)": {
+    "prefix": "lem",
+    "body": [
+      "\\begin{lemma}[$1]",
+      "  $2",
+      "\\end{lemma}"
+    ],
+    "description": "박스형 Lemma 환경 골격"
+  },
+  "Corollary (tcolorbox style)": {
+    "prefix": "cor",
+    "body": [
+      "\\begin{corollary}[$1]",
+      "  $2",
+      "\\end{corollary}"
+    ],
+    "description": "박스형 Corollary 환경 골격"
+  },
+      "Corollary (tcolorbox style)": {
+    "prefix": "pro",
+    "body": [
+      "\\begin{proposition}[$1]",
+      "  $2",
+      "\\end{proposition}"
+    ],
+    "description": "박스형 Proposition 환경 골격"
+  },
+  "Remark (tcolorbox style)": {
+    "prefix": "rmk",
+    "body": [
+      "\\begin{remark}[$1]",
+      "  $2",
+      "\\end{remark}"
+    ],
+    "description": "박스형 Remark 환경 골격"
+  },
+  "Proof": {
+    "prefix": "pf",
+    "body": [
+      "\\begin{proof}",
+      "  $1",
+      "\\end{proof}"
+    ],
+    "description": "Proof 환경"
+  },
+
+// 	// === 박스 스타일 정리/증명, label 있는 버전 ===
+//  "Theorem (tcolorbox style)": {
+//     "prefix": "thm",
+//     "body": [
+//       "\\begin{theorem}[$1]\\label{th:}",
+//       "  $2",
+//       "\\end{theorem}"
+//     ],
+//     "description": "박스형 Theorem 환경 골격"
+//   },
+//   "Definition (tcolorbox style)": {
+//     "prefix": "def",
+//     "body": [
+//       "\\begin{definition}[$1]\\label{def:}",
+//       "  $2",
+//       "\\end{definition}"
+//     ],
+//     "description": "박스형 Definition 환경 골격"
+//   },
+//   "Lemma (tcolorbox style)": {
+//     "prefix": "lem",
+//     "body": [
+//       "\\begin{lemma}[$1]\\label{lem:}",
+//       "  $2",
+//       "\\end{lemma}"
+//     ],
+//     "description": "박스형 Lemma 환경 골격"
+//   },
+//   "Corollary (tcolorbox style)": {
+//     "prefix": "cor",
+//     "body": [
+//       "\\begin{corollary}[$1]\\label{cor:}",
+//       "  $2",
+//       "\\end{corollary}"
+//     ],
+//     "description": "박스형 Corollary 환경 골격"
+//   },
+//   "Remark (tcolorbox style)": {
+//     "prefix": "rmk",
+//     "body": [
+//       "\\begin{remark}[$1]\\label{rmk:}",
+//       "  $2",
+//       "\\end{remark}"
+//     ],
+//     "description": "박스형 Remark 환경 골격"
+//   },
+//   "Proof": {
+//     "prefix": "pf",
+//     "body": [
+//       "\\begin{proof}",
+//       "  $1",
+//       "\\end{proof}"
+//     ],
+//     "description": "Proof 환경"
+//   },
+
+// ===== Footnote 관련 통합 스니펫 =====
+"Footnote 설정 (기호 체계)": {
+  "prefix": "fnsetup",
+  "body": [
+    "% ---- 각주 스타일 및 기호 체계 ----",
+    "\\usepackage[hang,flushmargin]{footmisc} % 들여쓰기 없이 매단 각주",
+    "\\setlength{\\footnotesep}{10pt}          % 각주 줄 간격",
+    "\\renewcommand{\\thefootnote}{\\fnsymbol{footnote}} % 숫자 대신 *, †, ‡, §, ¶, ‖"
+  ],
+  "description": "각주 스타일과 기호 체계(*, †, ‡ ...)를 전역 설정"
+},
+
+"Footnote (본문)": {
+  "prefix": "fn",
+  "body": [
+    "\\footnote{$1}"
+  ],
+  "description": "기본 footnote (본문/수식 뒤)"
+},
+
+"Footnotemark + Footnotetext": {
+  "prefix": "fnm",
+  "body": [
+    "\\footnotemark",
+    "\\footnotetext{$1}"
+  ],
+  "description": "수식 안 표시용 footnote (표시/내용 분리)"
+},
+
+  // ===== 목록/그림/표 =====
+  "Itemize": {
+    "prefix": "it",
+    "body": [
+      "\\begin{itemize}",
+      "  \\item $1",
+      "  \\item $2",
+      "\\end{itemize}"
+    ],
+    "description": "itemize"
+  },
+  "Enumerate": {
+    "prefix": "en",
+    "body": [
+      "\\begin{enumerate}",
+      "  \\item $1",
+      "  \\item $2",
+      "\\end{enumerate}"
+    ],
+    "description": "enumerate"
+  },
+  "Figure": {
+    "prefix": "fig",
+    "body": [
+      "\\begin{figure}[t]",
+      "  \\centering",
+      "  \\includegraphics[width=$1\\linewidth]{$2}",
+      "  \\caption{$3}",
+      "  \\label{fig:$4}",
+      "\\end{figure}"
+    ],
+    "description": "figure 환경"
+  },
+  "Inkscape figure include": {
+    "prefix": "figi",
+    "body": [
+      "\\figinclude{${1:name}}{${2:${1}}}{${3:0.35}}"
+    ],
+    "description": "Insert an Inkscape pdf_tex figure via mystyle.sty"
+  },
+  "Table": {
+    "prefix": "tab",
+    "body": [
+      "\\begin{table}[t]",
+      "  \\centering",
+      "  \\begin{tabular}{${1|c,l,r,cc,lll|}}",
+      "    \\hline",
+      "    $2 \\\\",
+      "    \\hline",
+      "  \\end{tabular}",
+      "  \\caption{$3}",
+      "  \\label{tab:$4}",
+      "\\end{table}"
+    ],
+    "description": "table + tabular"
+  },
+
+  // ===== 전역 프리엠블 단축 =====
+  "Common Preamble (physics)": {
+    "prefix": "prephys",
+    "body": [
+      "% --- Common packages ---",
+      "\\usepackage{amsmath, amssymb, amsthm, bm}",
+      "\\usepackage{physics}",
+      "\\usepackage{mathtools}",
+      "\\usepackage{siunitx}",
+      "\\usepackage{graphicx}",
+      "\\usepackage[hidelinks]{hyperref}",
+      "",
+    //   "% --- Theorem style ---",
+    //   "\\newtheorem{theorem}{Theorem}",
+    //   "\\newtheorem{lemma}{Lemma}",
+    //   "\\theoremstyle{remark}",
+    //   "\\newtheorem*{remark}{Remark}",
+    //   "",
+    //   "% --- Bra-Ket helpers ---",
+    //   "\\newcommand{\\bra}[1]{\\langle #1|}",
+    //   "\\newcommand{\\ket}[1]{|#1\\rangle}",
+    //   "\\newcommand{\\braket}[2]{\\langle #1|#2\\rangle}"
+    ],
+    "description": "자주 쓰는 패키지/정의 묶음"
+  }
+}
