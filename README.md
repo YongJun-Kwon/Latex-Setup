@@ -15,21 +15,23 @@ VS Code + LaTeX + Inkscape 환경에서
 ---
 
 ## 📂 구조(window)
+```
 latex-setup_window/ \\
 ├─ install.ps1                     # 최초 설치 스크립트\\
 ├─ backup.ps1                      # 전체 환경 백업 스크립트\\
 ├─ extensions.txt                  # 필수 VS Code 확장 목록\\
 ├─ README.md                       # (여기 readme 읽으면 필요 없음)\\
 ├─ vscode/ \\
-│ ├─ settings.json                 # 기본 설정
-│ ├─ keybindings.json              # Ctrl+Shift+I 단축키
-│ ├─ tasks.json                    # figure:oneshot 태스크
-│ └─ snippets/latex.json           # figi 스니펫
+│   ├─ settings.json                 # 기본 설정
+│   ├─ keybindings.json              # Ctrl+Shift+I 단축키
+│   ├─ tasks.json                    # figure:oneshot 태스크
+│   └─ snippets/latex.json           # figi 스니펫
 ├─ tex-tools/
-│ └─ figure_workflow.ps1           # Inkscape → Export → 클립보드
+│   └─ figure_workflow.ps1           # Inkscape → Export → 클립보드
 └─ texmf/
-   └─ tex/latex/mystyle/
-      └─ mystyle.sty               # 전역 개인 스타일 패키지
+    └─ tex/latex/mystyle/
+       └─ mystyle.sty               # 전역 개인 스타일 패키지
+```
 
 ## 📂 구조(mac)
 ```
